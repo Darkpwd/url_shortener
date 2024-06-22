@@ -1,0 +1,19 @@
+# Arquivos gerados automaticamente
+__pycache__/
+
+# Ignorar ambiente virtual (opcional)
+env/
+
+# Ignorar arquivos compilados Python
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de configuração sensíveis
+config.ini
+
+# Ignorar diretório de uploads
+uploads/

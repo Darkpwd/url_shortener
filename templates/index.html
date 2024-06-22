@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico"> <!-- Add a favicon -->
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center">URL Shortener</h1>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="url">Enter URL:</label>
+                        <input type="url" class="form-control" id="url" name="url" placeholder="https://example.com">
+                        <button type="button" class="btn btn-secondary btn-clear">Clear</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Shorten URL</button>
+                </form>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class="alert alert-info">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                {% if old_url and new_url %}
+                    <div class="alert alert-success">
+                        <strong>Original URL:</strong> {{ old_url }}<br>
+                        <strong>Shortened URL:</strong> {{ new_url }}
+                        <button type="button" class="btn btn-secondary btn-close">X</button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 URL Shortener</p>
+    </div>
+</body>
+</html>
